@@ -1,0 +1,104 @@
+:root {
+  --text-primary: #8a2b53;
+  --text-secondary: #5e3a4b;
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.4);
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #fce3ec 0%, #fbd1df 100%);
+  color: var(--text-secondary);
+}
+
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.8s ease-in-out, visibility 1.8s;
+  z-index: 10;
+}
+
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  border-radius: 40px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(230, 140, 170, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  max-width: 850px;
+  width: 90%;
+  transform: translateY(30px) scale(0.95);
+  animation: floatPanel 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Typography */
+.title-font {
+  font-family: 'Caveat', cursive;
+  font-size: 3.5rem;
+  color: var(--text-primary);
+  margin: 10px 0;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+.sub-font {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #c06c84;
+  letter-spacing: 1px;
+}
+
+/* Primary Button */
+.romantic-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 25px rgba(255, 154, 158, 0.6);
+  margin-top: 40px;
+}
+
+.romantic-btn:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 12px 35px rgba(255, 154, 158, 0.8);
+  background: linear-gradient(135deg, #fecfef 0%, #ff9a9e 100%);
+}
+
+@keyframes floatPanel {
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
