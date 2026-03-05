@@ -1,0 +1,151 @@
+/* --- SCREEN 1: The Gateway --- */
+.intro-panel {
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.intro-panel:hover {
+  transform: scale(1.02) !important;
+  box-shadow: 0 20px 50px rgba(230, 140, 170, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.beating-heart {
+  font-size: 5rem;
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 10px 15px rgba(255, 105, 180, 0.4));
+}
+
+@keyframes heartbeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.2);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.2);
+  }
+}
+
+/* --- SCREEN 2: Polaroid Gallery --- */
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.floating-title {
+  font-size: 4.5rem;
+  animation: softFloat 4s ease-in-out infinite;
+  margin-bottom: 30px;
+}
+
+.polaroid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 12px 12px 40px 12px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.polaroid .img-box {
+  width: 180px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+/* Scattered effect */
+.p1 {
+  transform: rotate(-8deg) translateY(10px);
+}
+
+.p2 {
+  transform: rotate(5deg) translateY(-10px);
+}
+
+.p3 {
+  transform: rotate(-4deg) translateY(15px);
+}
+
+.p4 {
+  transform: rotate(9deg) translateY(-5px);
+}
+
+/* Beautiful straightening effect on hover */
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.15) translateY(-15px);
+  box-shadow: 0 20px 40px rgba(255, 154, 158, 0.5);
+  z-index: 5;
+}
+
+/* --- SCREEN 3: Final Cake --- */
+.final-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 60px;
+}
+
+.floating-cake {
+  max-width: 250px;
+  height: auto;
+  animation: softFloat 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px rgba(255, 105, 180, 0.5));
+}
+
+.wish-text h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 4rem;
+  color: var(--text-primary);
+  margin: 20px 0 15px 0;
+  text-shadow: 2px 2px 5px #fff;
+}
+
+.wish-text p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.signature {
+  font-family: 'Caveat', cursive;
+  font-size: 2.5rem;
+  color: #ff69b4;
+  display: block;
+  margin-top: 20px;
+}
+
+@keyframes softFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
