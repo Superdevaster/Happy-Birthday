@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="2.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <title>A Romantic Dream</title>
+</head>
+
+<body>
+
+  <div id="canvas-container"></div>
+
+  <audio id="bg-music" src="src/music.mp3" preload="auto" loop></audio>
+
+  <div id="screen-intro" class="screen active">
+    <div class="glass-panel intro-panel" onclick="startJourney()">
+      <div class="beating-heart">💖</div>
+      <h1 class="title-font">A magical journey awaits...</h1>
+      <p class="sub-font">Tap the heart to enter, my princess</p>
+    </div>
+  </div>
+
+  <div id="screen-gallery" class="screen hidden">
+    <div class="gallery-wrapper">
+      <h2 class="title-font floating-title">Your Sweetest Chapters</h2>
+
+      <div class="polaroid-container">
+        <div class="polaroid p1">
+          <div class="img-box" style="background-image:url('images/photo1.jpg')"></div>
+        </div>
+        <div class="polaroid p2">
+          <div class="img-box" style="background-image:url('images/photo2.jpg')"></div>
+        </div>
+        <div class="polaroid p3">
+          <div class="img-box" style="background-image:url('images/photo3.jpg')"></div>
+        </div>
+        <div class="polaroid p4">
+          <div class="img-box" style="background-image:url('images/photo4.jpg')"></div>
+        </div>
+      </div>
+
+      <button class="romantic-btn" onclick="goToFinal()">Make a Wish ✨</button>
+    </div>
+  </div>
+
+  <div id="screen-final" class="screen hidden">
+    <div class="glass-panel final-panel">
+      <div class="cake-container">
+        <img src="src/cake.png" alt="Cake" class="floating-cake" />
+      </div>
+
+      <div class="wish-text">
+        <h3>Happy Birthday pookiee! 🎂</h3>
+        <p>
+          My prettiest princess, you paint my world with the most beautiful colors.<br><br>
+          May your day be as soft, lovely, and magical as this dreamscape. Thank you for being my everything. Keep
+          smiling and shining, cutuu.<br><br>
+          <span class="signature"> Happiest Birthday, pinguuuuuuuuu.LOTS OF LOVE AND HUGS FOR YOUUU 💖</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
